@@ -120,7 +120,7 @@ MonoBehaviour:
     value: 0
   contrast:
     overrideState: 1
-    value: 26.8
+    value: 16.2
   mixerRedOutRedIn:
     overrideState: 0
     value: 100
@@ -156,7 +156,7 @@ MonoBehaviour:
     value: {x: 1, y: 0.7016925, z: 0.79565114, w: -0.1474759}
   gain:
     overrideState: 1
-    value: {x: 0.85421944, y: 0.8442153, z: 1, w: 0.6579693}
+    value: {x: 0.85421944, y: 0.8442153, z: 1, w: 0.43108332}
   masterCurve:
     overrideState: 0
     value:

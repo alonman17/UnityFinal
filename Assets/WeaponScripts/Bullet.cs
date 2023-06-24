@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
 
             if(enemyHealth.currentHealth <= 0 && enemyHealth.isDead == false)
             {
-                Rigidbody rb = other.gameObject.GetComponentInParent<Rigidbody>();
+                Rigidbody rb = other.gameObject.GetComponentInChildren<Rigidbody>();
                 rb.AddForce(direction * weaponManager.enemyKickback, ForceMode.Impulse);
                 enemyHealth.isDead = true;
             }
