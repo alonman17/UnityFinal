@@ -14,7 +14,7 @@ public class GeneratorAstriodField : MonoBehaviour
         {
             Vector3 pos = Random.insideUnitSphere * fieldRadius;
             pos.y = Random.Range(-fieldRadius, fieldRadius);
-            Transform astroid = Instantiate(astroidPrefab[Random.Range(0, astroidPrefab.Length)], pos, Quaternion.identity);
+            Transform astroid = Instantiate(astroidPrefab[Random.Range(0, astroidPrefab.Length)], pos, Quaternion.identity,this.transform);
         }   
     }
 
