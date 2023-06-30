@@ -32,6 +32,12 @@ public class AiController : MonoBehaviour
     bool m_IsPatrol;                                //  If the enemy is patrol, state of patroling
     bool m_CaughtPlayer;                            //  if the enemy has caught the player
     Animator m_Animator;                            //  Animator component of the enemy
+
+    public float attackDamage = 10f;                //  Damage of the enemy
+
+    public float lastAttackTime = 0f;               //  Last time that the enemy attacked
+    public float attackDelay = 2f;                  //  Delay between attacks
+
     void Start()
     {
         m_PlayerPosition = Vector3.zero;
@@ -171,9 +177,15 @@ public class AiController : MonoBehaviour
  
     void CaughtPlayer()
     {
-
+        if (Time.time < lastAttackTime + attackDelay) return;
+        //  The enemy caught the player
         m_Animator.SetTrigger("attack");
+        lastAttackTime = Time.time;
+
         Stop();
+        PlayerHealth playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+        playerHealth.TakeDamage(attackDamage);
+
         // m_CaughtPlayer = true;
     }
  

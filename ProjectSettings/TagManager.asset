@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - WayPoints
+  - MinimapCamera
+  - Battery
+  - UI
   layers:
   - Default
   - TransparentFX
@@ -15,7 +18,7 @@ TagManager:
   - Player
   - Bullet
   - Obs
-  - 
+  - Minimap
   - 
   - 
   - 

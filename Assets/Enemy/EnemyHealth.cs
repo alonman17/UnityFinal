@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    [SerializeField] public float currentHealth = 100;
-    public float maxHealth = 100;
+    [HideInInspector]public float currentHealth;
+    [SerializeField] public float maxHealth = 100;
     [HideInInspector] public bool isDead = false;
     [HideInInspector] public HealthBar healthBar;
     
@@ -18,6 +18,7 @@ public class EnemyHealth : MonoBehaviour
         anim = GetComponent<Animator>();
         healthBar = GetComponentInChildren<HealthBar>();
         ragdollManager = GetComponent<RagdollManager>();
+        currentHealth = maxHealth;
     }
 
     public void TakeDamage(float damage)
