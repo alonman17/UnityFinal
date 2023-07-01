@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Animations.Rigging;
 public class PlayerHealth : MonoBehaviour
 {
 
@@ -9,6 +9,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] public float maxHealth = 100;
     [HideInInspector] public bool isDead = false;
     [SerializeField] private AudioSource hitSound;
+
+    public GameObject deathCam;
     private Animator anim;
     UIManager uiManager;
 
@@ -24,7 +26,6 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void TakeDamage(float damage)
@@ -46,6 +47,19 @@ public class PlayerHealth : MonoBehaviour
 
     void PlayerDeath()
     {
-        Debug.Log("Player is dead");
+        // anim.SetTrigger("Death");
+        // anim.SetLayerWeight(1, 0);
+        // anim.SetLayerWeight(2, 0);
+        anim.enabled = false;
+        deathCam.SetActive(true);
+        GetComponentInChildren<WeaponManager>().enabled = false;
+        GetComponent<CharacterController>().enabled = false;
+        GetComponent<MovementStateManager>().enabled = false;
+        GetComponent<RagdollManager>().TriggerRagdoll();
+        GetComponent<AimStateManager>().enabled = false;    
+        Rigidbody rb = GetComponentInChildren<Rigidbody>();
+        // rb.AddForce(transform.forward * 1000);
+
+
     }
 }
