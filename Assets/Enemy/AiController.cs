@@ -98,7 +98,7 @@ public class AiController : MonoBehaviour
             }
             else
             {
-                if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 5f)
+                if (Vector3.Distance(transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) >= 3f)
                     //  Wait if the current position is not the player position
                     Stop();
                 else{
@@ -164,7 +164,8 @@ public class AiController : MonoBehaviour
  
     void Stop()
     {
-        
+        m_Animator.SetBool("IsChasing", false);
+        m_Animator.SetBool("IsPatroling", false);
         navMeshAgent.isStopped = true;
         navMeshAgent.speed = 0;
     }

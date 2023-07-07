@@ -47,9 +47,6 @@ public class PlayerHealth : MonoBehaviour
 
     void PlayerDeath()
     {
-        // anim.SetTrigger("Death");
-        // anim.SetLayerWeight(1, 0);
-        // anim.SetLayerWeight(2, 0);
         anim.enabled = false;
         deathCam.SetActive(true);
         GetComponentInChildren<WeaponManager>().enabled = false;
@@ -58,8 +55,6 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<RagdollManager>().TriggerRagdoll();
         GetComponent<AimStateManager>().enabled = false;    
         Rigidbody rb = GetComponentInChildren<Rigidbody>();
-        // rb.AddForce(transform.forward * 1000);
-
 
     }
 }

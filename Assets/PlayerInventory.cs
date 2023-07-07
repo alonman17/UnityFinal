@@ -26,8 +26,8 @@ public class PlayerInventory : MonoBehaviour
         if(other.tag == "Battery")
         {
             batteryPickupSound.Play();
-            batteryCount++;
-            UIManager.instance.DisplayBattery(batteryCount);
+            
+            UIManager.instance.DisplayBattery(batteryCount++);
             Destroy(other.gameObject);
         }
     }
