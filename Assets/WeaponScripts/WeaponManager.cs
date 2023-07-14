@@ -95,4 +95,8 @@ public class WeaponManager : MonoBehaviour
         muzzleParticles.Play();
         muzzleFlash.intensity = lightIntensity;
     }
+
+    public void SetBulletDamage(float damage){
+        this.damage = damage;
+    }
 }

@@ -78,15 +78,15 @@ MonoBehaviour:
   m_Clips:
   - m_Version: 1
     m_Start: 0
-    m_ClipIn: 18.550000000000004
+    m_ClipIn: 27.31666666666667
     m_Asset: {fileID: -405310468055876163}
-    m_Duration: 220.83333333333334
+    m_Duration: 212.06666666666658
     m_TimeScale: 1
     m_ParentTrack: {fileID: 3739546390691653601}
-    m_EaseInDuration: 7.93
+    m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
-    m_BlendOutDuration: 2.4000000000000057
+    m_BlendOutDuration: 11.566666666666663
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -146,7 +146,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: yt5s.io - Stranger Things Theme Song (C418 REMIX) (320 kbps)
   - m_Version: 1
-    m_Start: 218.43333333333334
+    m_Start: 200.49999999999991
     m_ClipIn: 34.15832357142741
     m_Asset: {fileID: -1328987221339884398}
     m_Duration: 213.82208459183812
@@ -154,29 +154,11 @@ MonoBehaviour:
     m_ParentTrack: {fileID: 3739546390691653601}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 2.4000000000000057
+    m_BlendInDuration: 11.566666666666663
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
+      m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
