@@ -8,6 +8,7 @@ TagManager:
   - MinimapCamera
   - Battery
   - UI
+  - Bullet
   layers:
   - Default
   - TransparentFX
