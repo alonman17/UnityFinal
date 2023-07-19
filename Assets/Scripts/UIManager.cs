@@ -7,7 +7,7 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
-    private TMP_Text healthText;
+   [SerializeField]  private TMP_Text healthText;
     [SerializeField] private Image[] batteryImages;
 
 
@@ -15,7 +15,6 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         instance = this;
-        healthText = GetComponentInChildren<TMP_Text>();
         for (int i = 0; i < batteryImages.Length; i++)
         {
             batteryImages[i].enabled = false;
@@ -31,7 +30,6 @@ public class UIManager : MonoBehaviour
 
     public void UpdateHealthText(float currentHealth, float maxHealth)
     {
-
         healthText.text = "HP: " + currentHealth + "/" + maxHealth;
     }
 
