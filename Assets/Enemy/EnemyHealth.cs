@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     [HideInInspector]public float currentHealth;
-    [SerializeField] public float maxHealth = 100;
+    [SerializeField] public float maxHealth;
     [HideInInspector] public bool isDead = false;
     [HideInInspector] public HealthBar healthBar;
     
@@ -15,6 +15,7 @@ public class EnemyHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        maxHealth = PlayerState.getDifficultyHealth();
         anim = GetComponent<Animator>();
         healthBar = GetComponentInChildren<HealthBar>();
         ragdollManager = GetComponent<RagdollManager>();

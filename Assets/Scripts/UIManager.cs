@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
    [SerializeField]  private TMP_Text healthText;
-    [SerializeField] private Image[] batteryImages;
+    [SerializeField]  private Image[] batteryImages;
 
 
     // Start is called before the first frame update

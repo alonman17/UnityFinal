@@ -5,8 +5,9 @@ using UnityEngine.Animations.Rigging;
 public class PlayerHealth : MonoBehaviour
 {
 
-    [HideInInspector] static public float currentHealth;
-    [SerializeField] public float maxHealth = 100;
+    
+    [HideInInspector] public float currentHealth;
+    [SerializeField] public float maxHealth;
     [HideInInspector] public bool isDead = false;
     [SerializeField] private AudioSource hitSound;
 
@@ -17,7 +18,8 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {   
-        // currentHealth = maxHealth;
+        maxHealth = PlayerState.maxHealth;
+        currentHealth = PlayerState.currentHealth;
         uiManager  = GameObject.FindGameObjectWithTag("UI").GetComponent<UIManager>();
         anim = GetComponent<Animator>();
         uiManager.UpdateHealthText(currentHealth, maxHealth);

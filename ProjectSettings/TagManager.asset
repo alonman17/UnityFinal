@@ -9,6 +9,7 @@ TagManager:
   - Battery
   - UI
   - Bullet
+  - Fuel
   layers:
   - Default
   - TransparentFX
