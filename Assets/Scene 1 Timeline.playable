@@ -33,7 +33,7 @@ MonoBehaviour:
   m_Loop: 0
   m_bufferingTime: 0.1
   m_ClipProperties:
-    volume: 1
+    volume: 0.625
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,12 +78,12 @@ MonoBehaviour:
   m_Clips:
   - m_Version: 1
     m_Start: 0
-    m_ClipIn: 27.31666666666667
+    m_ClipIn: 17.750000000000007
     m_Asset: {fileID: -405310468055876163}
-    m_Duration: 212.06666666666658
+    m_Duration: 221.63333333333327
     m_TimeScale: 1
     m_ParentTrack: {fileID: 3739546390691653601}
-    m_EaseInDuration: 0
+    m_EaseInDuration: 8.91
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
     m_BlendOutDuration: 11.566666666666663
@@ -146,7 +146,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: yt5s.io - Stranger Things Theme Song (C418 REMIX) (320 kbps)
   - m_Version: 1
-    m_Start: 200.49999999999991
+    m_Start: 210.0666666666666
     m_ClipIn: 34.15832357142741
     m_Asset: {fileID: -1328987221339884398}
     m_Duration: 213.82208459183812

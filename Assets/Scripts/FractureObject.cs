@@ -1,4 +1,4 @@
-using System.Collections;
+    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,33 +10,41 @@ public class FractureObject : MonoBehaviour
     public GameObject fracturePrefab;
     public GameObject OriginalObject;
 
-    public float explosionMinForce = 5f;
-    public float explosionMaxForce = 100f;
+    public GameObject optinalItem;
+    public float explosionMinForce = 0.1f;
+    public float explosionMaxForce = 1f;
     public float explosionRadius = 20f;
 
     private GameObject fracture;
 
     void OnCollisionEnter(Collision collision){
         if (collision.gameObject.tag == "Bullet"){
-            Explode();
+            //
+            Explode(collision);
         }
     }
 
-    void Explode(){
-        
+    void Explode(Collision collision){
         OriginalObject.SetActive(false);
-         fracture = Instantiate(fracturePrefab, transform.position, transform.rotation) as GameObject;
+        fracture = Instantiate(fracturePrefab, transform.position, transform.rotation) as GameObject;
         foreach (Transform child in fracture.transform){
+            
             Rigidbody rb = child.GetComponent<Rigidbody>();
-            if (rb != null){
-                rb.AddExplosionForce(Random.Range(explosionMinForce, explosionMaxForce), OriginalObject.transform.position, explosionRadius);
+            if(rb != null){
+               //add normal force
+               rb.AddExplosionForce(Random.Range(explosionMinForce, explosionMaxForce), collision.contacts[0].point, explosionRadius);
             }
+       
+
+
+
+            
             StartCoroutine(Shrink(child,2f));
-            // Destroy(child.gameObject, 3f);
         }
-
+        if(optinalItem != null){
+            Instantiate(optinalItem, transform.position, transform.rotation);
+        }
         
-
     }
 
     IEnumerator Shrink(Transform t,float delay){

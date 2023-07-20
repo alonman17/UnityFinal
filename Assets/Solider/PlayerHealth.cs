@@ -11,6 +11,8 @@ public class PlayerHealth : MonoBehaviour
     [HideInInspector] public bool isDead = false;
     [SerializeField] private AudioSource hitSound;
 
+    [SerializeField] private GameObject deathEffect;
+
     public GameObject deathCam;
     private Animator anim;
     UIManager uiManager;
@@ -57,6 +59,11 @@ public class PlayerHealth : MonoBehaviour
         GetComponent<RagdollManager>().TriggerRagdoll();
         GetComponent<AimStateManager>().enabled = false;    
         Rigidbody rb = GetComponentInChildren<Rigidbody>();
+        Cursor.lockState = CursorLockMode.None;
+        uiManager.enabled = false;
+        deathEffect.SetActive(true);
+        PlayerInventory.batteryCount = 0;
+        PlayerInventory.fuelCount = 0;
 
     }
 }

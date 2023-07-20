@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Mars Landscape 3D Overview.unity
     guid: fac6cf77c190b7f46900ed3ae0fb3ab4
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: 3b1ad0d4f03db224298b613a13889cb4
   m_configObjects: {}

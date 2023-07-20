@@ -7,17 +7,26 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
-   [SerializeField]  private TMP_Text healthText;
+    [SerializeField]  private TMP_Text healthText;
     [SerializeField]  private Image[] batteryImages;
+    [SerializeField]  private Image[] fuelImages;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
         instance = this;
-        for (int i = 0; i < batteryImages.Length; i++)
+        UpdateHealthText(PlayerState.currentHealth, PlayerState.maxHealth);
+        for(int i = 0; i < PlayerInventory.batteryCount; i++)
         {
-            batteryImages[i].enabled = false;
+            Debug.Log("Displaying battery " + i);
+            batteryImages[i].gameObject.SetActive(true);
+        }
+        for(int i = 0; i < PlayerInventory.fuelCount; i++)
+        {
+            Debug.Log("Displaying battery " + i);
+            fuelImages[i].gameObject.SetActive(true);
         }
 
     }
@@ -35,6 +44,11 @@ public class UIManager : MonoBehaviour
 
     public void DisplayBattery(int batteryCount)
     {
-        batteryImages[batteryCount].enabled = true;
+        batteryImages[batteryCount].gameObject.SetActive(true);
+    }
+
+    public void DisplayFuel(int fuelCount)
+    {
+        fuelImages[fuelCount].gameObject.SetActive(true);
     }
 }

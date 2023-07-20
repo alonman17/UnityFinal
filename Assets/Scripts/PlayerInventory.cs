@@ -4,21 +4,10 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
-    public static PlayerInventory instance;
-    public int batteryCount = 0;
+    public static int batteryCount = 0;
+    public static int fuelCount = 0;
     public AudioSource batteryPickupSound;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        instance = this;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+ 
 
     void OnTriggerEnter (Collider other)
     {
@@ -31,8 +20,8 @@ public class PlayerInventory : MonoBehaviour
             Destroy(other.gameObject);
         }
         if(other.tag =="Fuel"){
-                        batteryPickupSound.Play();
-
+            UIManager.instance.DisplayFuel(fuelCount++);
+            batteryPickupSound.Play();
             Destroy(other.gameObject);
         }
     }
